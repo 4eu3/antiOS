@@ -1,4 +1,4 @@
-﻿@@echo off
+@echo off
 
 
 
@@ -156,7 +156,8 @@ set /a m4=%random%%%(max4-min4+1)+min4
 
 
 rem Hostname/username change
-wmic useraccount where caption='%USERNAME%' rename %user%
+wmic computersystem where name='%USERNAME%' call rename name='%user%'
+wmic useraccount where name='%USERNAME%' call rename name='%user%'
 REG ADD   "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters" /v "NV Hostname" /t REG_SZ /d %hostname% /f
 REG ADD   "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters" /v Hostname /t REG_SZ /d %hostname% /f
 REG ADD   "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName" /v ComputerName /t REG_SZ /d %hostname% /f
