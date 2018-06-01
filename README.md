@@ -1,3 +1,5 @@
+Fast link into .zip: https://clck.ru/DVzPv
+
 # antiOS
 Bat file to change/spoof windows identificators to protect user from local installed software.
 # MAYBE YOU NEED TO CHANGE INDIVIDUAL FOR YOUR SYSTEM
